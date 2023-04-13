@@ -9,9 +9,12 @@ using namespace cv;
 
 int main()
 {
+	// Test path files 
+	// C:\Users\jason\Pictures\FAMILY\Uncles.JPG
+	// C:\Users\jason\Pictures\Me\frontyard.jpg
 	// This program implements the Viola-Jones algorithm where it detects faces in an image
 	CascadeClassifier facialRecognition;
-	if (!facialRecognition.load("C:\\Users\\jason\\Downloads\\opencv\\sources\\data\\haarcascades\\haarcascade_frontalface_default.xml")) {
+	if (!facialRecognition.load("C:\\Program Files\\opencv\\sources\\data\\haarcascades\\haarcascade_frontalface_default.xml")) {
 		cout << "\n File isn't loaded properly";
 		exit(0); //stdlib.h
 	}
@@ -38,7 +41,7 @@ int main()
 			rectangle(img, pt1, pt2, Scalar(0, 255, 0), 2, 8, 0);
 		}
 
-		imwrite("C:\\Users\\jason\\Documents\\Coding\\FacialRecognitionProject\\facialOutPutRecognition.jpg", img);
+		imwrite("C:\\GitHub\\ImageFaceDetector\\facialOutPutRecognition.jpg", img);
 		cout << "\n Image was detected!! Check path for new output image";
 	}
 
